@@ -83,22 +83,22 @@ const Mobile = () => {
                             src={App02}
                             alt="App screenshot 2"
                             style={floatAnimation2sDelay}
-                            className="absolute -left-[10px] -top-10 translate-x-[-10%] translate-y-[-10%] z-0
-               w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
+                            className="absolute -left-[15px] -top-10 translate-x-[-10%] translate-y-[-10%] z-0
+                                        w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
                         />
                         <img
                             src={App01}
                             alt="App screenshot 1"
                             style={floatAnimation}
                             className="absolute left-1/4 top-4 z-20
-               w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
+                                        w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
                         />
                         <img
                             src={App03}
                             alt="App screenshot 3"
                             style={floatAnimation4sDelay}
                             className="absolute left-1/2 top-14 translate-x-[-50%] z-10
-               w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
+                                        w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
                         />
                     </div>
 

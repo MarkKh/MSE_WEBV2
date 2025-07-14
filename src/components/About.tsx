@@ -1,80 +1,79 @@
-import React from 'react';
-import { Users, Target, Award, Lightbulb } from 'lucide-react';
+import { Users, Layers, Target } from "lucide-react";
 
 const About = () => {
   const stats = [
-    { label: 'Team Members', value: '25+', icon: <Users className="w-6 h-6" /> },
-    { label: 'Integrated System', value: 'Fully', icon: <Target className="w-6 h-6" /> },
-  ];
+    {
+      label: "Team Members",
+      value: "25+",
+      icon: Users,
+    },
+    {
+      label: "Integrated System",
+      value: "Fully",
+      icon: Layers,
+    },
 
-  const values = [
-    {
-      title: 'Innovation',
-      description: 'We stay ahead of technology trends and continuously innovate to deliver cutting-edge solutions.',
-      icon: '🚀'
-    },
-    {
-      title: 'Quality',
-      description: 'We maintain the highest standards in every project, ensuring reliable and scalable solutions.',
-      icon: '💎'
-    },
-    {
-      title: 'Partnership',
-      description: 'We work closely with our clients as trusted partners in their digital transformation journey.',
-      icon: '🤝'
-    },
-    {
-      title: 'Growth',
-      description: 'We focus on solutions that not only meet current needs but also support future growth.',
-      icon: '📈'
-    }
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-slate-50 to-white py-24"
+    >
+      {/* background blob */}
+      <div className="absolute -top-48 -left-32 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 -right-40 w-[32rem] h-[32rem] bg-indigo-200/40 rounded-full blur-3xl" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="text-center mb-20">
+          <h2 className="text-4xl font-extrabold text-slate-800 mb-4">
             About Modular Software
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We are a team of passionate technologists dedicated to transforming businesses through innovative digital solutions
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            We’re a team of technologists transforming hospitals with innovative
+            digital solutions.
           </p>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Our Success Story
-            </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Modular Software Expertise Co., Ltd. (MSE) is a software house specializing in the development of hospital information systems. Our flagship product, MSE Proteus HIS, is a comprehensive Hospital Information Management System (HIMS) designed and developed by a team of experts with over 30 years of experience in both healthcare and IT systems. The system is tailored to meet the complex needs of modern hospitals, ensuring efficiency, reliability, and seamless integration across all departments.
-            </p>
+        {/* Glass card */}
+        <div className="">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            {/* Story */}
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-800 mb-6">
+                Our Success Story
+              </h3>
+              <p className="text-slate-700 leading-relaxed">
+                Modular Software Expertise Co., Ltd. (MSE) is a software house
+                specialising in Hospital Information Systems. Our flagship
+                product, <b>MSE Proteus HIS</b>, is built by experts with 30+
+                years’ healthcare &amp; IT experience — bringing efficiency,
+                reliability and seamless integration to modern hospitals.
+              </p>
+            </div>
 
-            {/* <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">React</span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Node.js</span>
-              <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">AWS</span>
-              <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">AI/ML</span>
-              <span className="px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium">DevOps</span>
-            </div> */}
-          </div>
-
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-blue-600 mb-2 flex justify-center">
-                  {stat.icon}
+            {/* Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {stats.map(({ label, value, icon: Icon }) => (
+                <div
+                  key={label}
+                  className="flex flex-col items-center text-center bg-white rounded-xl shadow-sm py-8 px-4"
+                >
+                  <div className="mb-4">
+                    <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 text-white ring-4 ring-white shadow-lg">
+                      <Icon className="w-7 h-7" />
+                    </span>
+                  </div>
+                  <div className="text-3xl font-bold text-slate-800">
+                    {value}
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">{label}</div>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
-
     </section>
   );
 };

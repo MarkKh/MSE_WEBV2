@@ -52,7 +52,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      content: 'msesoftth@gmail.com',
+      content: 'msesoft.md@gmail.com ,msesoftth@gmail.com',
       href: 'mailto:msesoftth@gmail.com'
     },
     {
