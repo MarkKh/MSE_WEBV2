@@ -6,13 +6,15 @@ import HIS from './HIS';
 
 const Product = () => {
     return (
-        <section id="product">
-            <>
-                <HIS />
-                <ERP />
-                <Dashboard />
-                <Mobile />
-            </>
+        <section id="product" className="bg-white">
+            <div>
+                <>
+                    <HIS />
+                    <ERP />
+                    <Dashboard />
+                    <Mobile />
+                </>
+            </div>
         </section>
     );
 };

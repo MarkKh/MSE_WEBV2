@@ -32,7 +32,7 @@ const Mobile = () => {
             {/* แทรก keyframes ลงใน style tag */}
             <style>{floatKeyframes}</style>
 
-            <section id="mobile" className="py-40 bg-white relative">
+            <section id="mobile" className="py-12 sm:py-20 bg-white relative">
                 {/* Animated background blobs */}
                 <div className="absolute inset-0 overflow-hidden z-10">
                     <div className="absolute -top-60 -right-60 w-[32rem] h-[32rem] bg-green-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
@@ -78,31 +78,34 @@ const Mobile = () => {
                     </div>
 
                     {/* Phone Images */}
-                    <div className="flex justify-center relative mt-12 mb-12 lg:mt-0">
-                        <div className="relative w-[280px] h-[530px]">
-                            <img
-                                src={App02}
-                                alt="App screenshot 2"
-                                style={floatAnimation2sDelay}
-                                className="absolute -left-[120px] -top-[60px] w-[270px] z-0"
-                            />
-                            <img
-                                src={App01}
-                                alt="App screenshot 1"
-                                style={floatAnimation}
-                                className="absolute -left-2 top-0 w-[270px] z-20"
-                            />
-                            <img
-                                src={App03}
-                                alt="App screenshot 3"
-                                style={floatAnimation4sDelay}
-                                className="absolute left-[120px] top-[60px] w-[270px] z-10"
-                            />
-                        </div>
+                    <div className="relative w-full max-w-sm aspect-[280/530] mx-auto">
+                        <img
+                            src={App02}
+                            alt="App screenshot 2"
+                            style={floatAnimation2sDelay}
+                            className="absolute -left-[10px] -top-10 translate-x-[-10%] translate-y-[-10%] z-0
+               w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
+                        />
+                        <img
+                            src={App01}
+                            alt="App screenshot 1"
+                            style={floatAnimation}
+                            className="absolute left-1/4 top-4 z-20
+               w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
+                        />
+                        <img
+                            src={App03}
+                            alt="App screenshot 3"
+                            style={floatAnimation4sDelay}
+                            className="absolute left-1/2 top-14 translate-x-[-50%] z-10
+               w-1/2 sm:w-2/3 md:w-3/4 max-w-[270px]"
+                        />
                     </div>
 
+
+
                     {/* Text Cards Mobile/Tablet */}
-                    <div className="py-10 grid grid-cols-1 md:grid-cols-2 gap-6 px-2 md:px-4 lg:hidden">
+                    <div className="-mt-[150px] grid grid-cols-1 md:grid-cols-2 gap-6 px-2 md:px-4 lg:hidden">
                         <h2
                             className="md:col-span-2 text-xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-gray-700 to-blue-500 bg-clip-text text-transparent"
                             style={{ backgroundSize: '200% 200%', backgroundPosition: 'left center' }}

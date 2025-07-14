@@ -7,9 +7,10 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
     { name: 'Product', href: '#product' },
+    { name: 'Services', href: '#services' },
+    { name: 'Client', href: '#client' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -31,8 +32,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${ishome
-          ? 'bg-transparent text-white border-b border-transparent'
-          : 'bg-white/90 backdrop-blur-md text-gray-800 border-b border-gray-200'
+        ? 'bg-transparent text-white border-b border-transparent'
+        : 'bg-white/90 backdrop-blur-md text-gray-800 border-b border-gray-200'
         }`}
     >
 

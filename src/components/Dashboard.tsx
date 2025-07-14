@@ -26,7 +26,7 @@ const Dashboard = () => {
         <>
             <style>{floatKeyframes}</style>
 
-            <section id="dashboard" className="py-40 bg-white relative sm:py-12">
+            <section id="dashboard" className="py-12 sm:py-20 bg-white relative">
                 {/* Background blob */}
                 <div className="absolute inset-0 overflow-hidden z-0">
                     <div className="absolute -bottom-60 -right-60 w-[32rem] h-[32rem] bg-green-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
@@ -37,13 +37,13 @@ const Dashboard = () => {
                     {/* Desktop layout */}
                     <div className="flex flex-col lg:flex-row items-center lg:items-center lg:justify-between gap-8">
                         {/* Phone Images */}
-                        <div className="relative mx-auto w-[650px] h-[400px]">
+                        <div className="relative mx-auto w-full max-w-lg aspect-[650/400]">
                             {/* รูปหลัง */}
                             <img
                                 src={Dash01}
                                 alt="App screenshot 2"
                                 style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '2s' }}
-                                className="absolute left-10 top-0 w-[650px] z-0"
+                                className="absolute left-0 top-0 w-full max-w-[650px] z-0"
                             />
 
                             {/* รูปหน้า */}
@@ -51,9 +51,10 @@ const Dashboard = () => {
                                 src={Dash02}
                                 alt="App screenshot 1"
                                 style={{ animation: 'float 3s ease-in-out infinite' }}
-                                className="absolute -left-[10px] top-[180px] w-[300px] z-10"
+                                className="absolute left-0 top-1/3 w-1/2 max-w-[300px] z-10"
                             />
                         </div>
+
                         {/* Text Cards */}
                         <div className="hidden lg:block">
 

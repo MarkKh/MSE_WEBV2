@@ -26,7 +26,7 @@ const ERP = () => {
         <>
             <style>{floatKeyframes}</style>
 
-            <section id="erp" className="py-40 bg-white relative sm:py-12">
+            <section id="erp" className="py-12 sm:py-20 bg-white relative">
                 {/* Background blob */}
                 <div className="absolute inset-0 overflow-hidden z-0">
                     <div className="absolute -top-60 -left-60 w-[32rem] h-[32rem] bg-[#FFF2E0] rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse animation-delay-2000"></div>
@@ -59,13 +59,13 @@ const ERP = () => {
                         </div>
 
                         {/* Phone Images */}
-                        <div className="relative mx-auto w-[650px] h-[400px]">
-                             {/* รูปหลัง */}
+                        <div className="relative mx-auto w-full max-w-lg h-auto aspect-[650/400]">
+                            {/* รูปหลัง */}
                             <img
                                 src={ERP01}
                                 alt="App screenshot 2"
                                 style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '2s' }}
-                                className="absolute right-[50px] top-0 w-[450px] z-0"
+                                className="absolute right-12 top-0 w-3/4 max-w-[450px] z-0"
                             />
 
                             {/* รูปหน้า */}
@@ -73,7 +73,7 @@ const ERP = () => {
                                 src={ERP02}
                                 alt="App screenshot 1"
                                 style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '1s' }}
-                                className="absolute -left-[10px] top-[120px] w-[400px] z-10"
+                                className="absolute left-0 top-1/3 w-2/3 max-w-[400px] z-10"
                             />
                         </div>
                     </div>

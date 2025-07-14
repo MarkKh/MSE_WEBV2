@@ -1,23 +1,19 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Product from "./components/Product";
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+// src/App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CookieBanner from "./components/CookieBanner";
+import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Product />
-      <Contact />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <CookieBanner />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
