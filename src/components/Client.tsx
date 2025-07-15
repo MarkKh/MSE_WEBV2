@@ -36,22 +36,22 @@ const clients = [
     { src: img7, alt: "โรงพยาบาลธนบุรีบูรณา", shot: 'Thonburiburana' },
     { src: img8, alt: "โรงพยาบาลธนบุรีบำรุงเมือง", shot: 'Thonburi' },
     { src: img9, alt: "โรงพยาบาลธนบุรี", shot: 'THB' },
-    { src: img10, alt: "โรงพยาบาลธนบุรี 2", shot: 'Thonburi2' },
+    { src: img10, alt: "โรงพยาบาลธนบุรีทวีวัฒนา", shot: 'Thonburi2' },
     { src: img11, alt: "Dr. Hann Hospital", shot: 'HANN' },
     { src: img12, alt: "โรงพยาบาลรวมแพทย์", shot: 'RUAMPAT' },
-    { src: img13, alt: "โรงพยาบาลรวมแพทย์ฉะเชิงเทรา", shot: 'RUAMPATCLINIC' },
+    { src: img13, alt: "โรงพยาบาลรวมแพทย์", shot: 'RUAMPATCLINIC' },
     { src: img14, alt: "โรงพยาบาลภัทร-ธนบุรี", shot: 'Pattara' },
     { src: img15, alt: "โรงพยาบาลพัทยาอินเตอร์", shot: 'pattayainter' },
     { src: img16, alt: "โรงพยาบาลมุกดาหารอินเตอร์เนชั่นแนล", shot: 'Muk' },
     { src: img17, alt: "โรงพยาบาลอุบลรักษ์ ธนบุรี", shot: 'UTH' },
     { src: img18, alt: "โรงพยาบาลธนบุรี ราษฎร์ยินดี", shot: 'Rajyindee' },
     { src: img19, alt: "โรงพยาบาลทักษิณ", shot: 'THAKSIN' },
-    { src: img20, alt: "โรงพยาบาลทักษิณ", shot: 'Theptarin' },
+    { src: img20, alt: "โรงพยาบาลวิมุต-เทพธารินทร์", shot: 'Theptarin' },
     { src: img21, alt: "โรงพยาบาลเมืองพัทยา", shot: 'PattayaCity' },
     { src: img22, alt: "สำนักแพทย์และอนามัยการท่าเรือแห่งประเทศไทย", shot: 'PAT' },
     { src: img23, alt: "โรงพยาบาลกรุงเทพภูเก็ต", shot: 'Phuket' },
     { src: img24, alt: "โรงพยาบาลทหารผ่านศึก", shot: 'VGH' },
-    { src: img25, alt: "ArYu International HospitalYangon, Myanmar" , shot:'ArYu' },
+    { src: img25, alt: "ArYu International HospitalYangon, Myanmar", shot: 'ArYu' },
 ];
 
 const Client = () => {
@@ -67,18 +67,18 @@ const Client = () => {
             </div>
 
             <div className="relative w-full overflow-hidden">
+                {/* ดึง clients มาต่อท้ายตัวเองอยู่แล้ว ⇒ เหลือแค่ขยับ keyframe */}
                 <div className="flex gap-8 animate-scroll">
                     {[...clients, ...clients].map((client, index) => (
                         <div
                             key={index}
-                            className="inline-flex flex-col items-center w-40 shrink-0 transition-transform duration-300 ease-in-out"
+                            className="inline-flex flex-col items-center w-40 shrink-0"
                         >
                             <img
                                 src={client.src}
                                 alt={client.alt}
                                 className="h-32 object-contain"
                             />
-
                             <span className="mt-2 w-38 text-sm text-gray-500 text-center break-all leading-tight">
                                 {client.alt}
                             </span>
@@ -86,17 +86,22 @@ const Client = () => {
                     ))}
                 </div>
 
-
+                {/* ตรงนี้คือจุดสำคัญ */}
                 <style>{`
                     @keyframes scroll {
-                    0%   { transform: translateX(0);   }
-                    100% { transform: translateX(-100%); }
+                    0%   { transform: translateX(0); }
+                    /* เลื่อนไปครึ่งเดียวของแทร็ก
+                        (เพราะเราต่อรายการซ้ำ 2 ชุด) */
+                    100% { transform: translateX(-50%); }
                     }
                     .animate-scroll {
-                    animation: scroll 30s linear infinite;
+                    animation: scroll 60s  linear infinite;
+                    /* ช่วยให้แถวยาวตามคอนเทนต์ ไม่ถูกหด */
+                    width: max-content;
                     }
                 `}</style>
             </div>
+
 
 
 

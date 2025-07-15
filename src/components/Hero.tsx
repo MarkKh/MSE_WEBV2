@@ -2,20 +2,15 @@ import React, { useState, useRef, useCallback } from 'react';
 import heroVideo from '../assets/vdo/hero2.mp4';
 
 const Hero = () => {
-  const [revealed, setRevealed] = useState(false);          // = overlay/content เผยหรือยัง
+  const [revealed, setRevealed] = useState(false);   
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // ยิงเมื่อวิดีโอจบรอบแรก (และทุก ๆ รอบ)
   const handleVideoEnd = useCallback(() => {
-    // รอบแรกเท่านั้นที่ต้องเผย overlay/content
     if (!revealed) setRevealed(true);
 
-    // รีเซ็ตแล้วเล่นต่อทันที เพื่อจำลอง loop แต่ยังได้ onEnded
     const v = videoRef.current;
     if (v) {
       v.currentTime = 0;
-      // Safari บางเวอร์ชันต้อง async ▸ จึงใช้ .play() ที่คืน Promise
-      /* eslint-disable-next-line @typescript-eslint/no-floating-promises */
       v.play();
     }
   }, [revealed]);
