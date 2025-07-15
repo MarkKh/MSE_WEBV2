@@ -34,12 +34,12 @@ const clients = [
     { src: img5, alt: "โรงพยาบาลคูณ", shot: 'KOON' },
     { src: img6, alt: "หน่วยไตเทียมอีออนเมด", shot: 'Aeonmed' },
     { src: img7, alt: "โรงพยาบาลธนบุรีบูรณา", shot: 'Thonburiburana' },
-    { src: img8, alt: "โรงพยาบาลธนบุรีบำรุงเมือง", shot: 'Thonburi' },
+    { src: img8, alt: "โรงพยาบาลธนบุรี บำรุงเมือง", shot: 'Thonburi' },
     { src: img9, alt: "โรงพยาบาลธนบุรี", shot: 'THB' },
     { src: img10, alt: "โรงพยาบาลธนบุรีทวีวัฒนา", shot: 'Thonburi2' },
     { src: img11, alt: "Dr. Hann Hospital", shot: 'HANN' },
-    { src: img12, alt: "โรงพยาบาลรวมแพทย์", shot: 'RUAMPAT' },
-    { src: img13, alt: "โรงพยาบาลรวมแพทย์", shot: 'RUAMPATCLINIC' },
+    { src: img12, alt: "โรงพยาบาลรวมแพทย์ยโสธร", shot: 'RUAMPAT' },
+    { src: img13, alt: "คลินิกรวมแพทย์ยโสธร", shot: 'RUAMPATCLINIC' },
     { src: img14, alt: "โรงพยาบาลภัทร-ธนบุรี", shot: 'Pattara' },
     { src: img15, alt: "โรงพยาบาลพัทยาอินเตอร์", shot: 'pattayainter' },
     { src: img16, alt: "โรงพยาบาลมุกดาหารอินเตอร์เนชั่นแนล", shot: 'Muk' },
@@ -49,9 +49,9 @@ const clients = [
     { src: img20, alt: "โรงพยาบาลวิมุต-เทพธารินทร์", shot: 'Theptarin' },
     { src: img21, alt: "โรงพยาบาลเมืองพัทยา", shot: 'PattayaCity' },
     { src: img22, alt: "สำนักแพทย์และอนามัยการท่าเรือแห่งประเทศไทย", shot: 'PAT' },
-    { src: img23, alt: "โรงพยาบาลกรุงเทพภูเก็ต", shot: 'Phuket' },
+    { src: img23, alt: "โรงพยาบาลองค์การบริหารส่วนจังหวัดภูเก็ต", shot: 'Phuket' },
     { src: img24, alt: "โรงพยาบาลทหารผ่านศึก", shot: 'VGH' },
-    { src: img25, alt: "ArYu International HospitalYangon, Myanmar", shot: 'ArYu' },
+    { src: img25, alt: "ArYu International Hospital Yangon, Myanmar", shot: 'ArYu' },
 ];
 
 const Client = () => {
@@ -79,7 +79,7 @@ const Client = () => {
                                 alt={client.alt}
                                 className="h-32 object-contain"
                             />
-                            <span className="mt-2 w-38 text-sm text-gray-500 text-center break-all leading-tight">
+                            <span className="mt-2 w-48 text-sm text-gray-500 text-center break-words whitespace-normal leading-tight">
                                 {client.alt}
                             </span>
                         </div>
@@ -89,15 +89,12 @@ const Client = () => {
                 {/* ตรงนี้คือจุดสำคัญ */}
                 <style>{`
                     @keyframes scroll {
-                    0%   { transform: translateX(0); }
-                    /* เลื่อนไปครึ่งเดียวของแทร็ก
-                        (เพราะเราต่อรายการซ้ำ 2 ชุด) */
-                    100% { transform: translateX(-50%); }
+                        0%   { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
                     }
                     .animate-scroll {
-                    animation: scroll 60s  linear infinite;
-                    /* ช่วยให้แถวยาวตามคอนเทนต์ ไม่ถูกหด */
-                    width: max-content;
+                        animation: scroll 60s  linear infinite;
+                        width: max-content;
                     }
                 `}</style>
             </div>
